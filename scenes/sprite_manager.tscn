@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://sprite_manager_wss2"]
+
+[ext_resource type="Script" uid="uid://sprite_manager_gd_wss2" path="res://scripts/SceneScripts/sprite_manager.gd" id="1_smgr"]
+
+[node name="SpriteManager" type="Node2D"]
+script = ExtResource("1_smgr")

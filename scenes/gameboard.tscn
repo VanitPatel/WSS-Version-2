@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://mhis7nykg77q"]
+
+[ext_resource type="Script" uid="uid://crxivf7muol74" path="res://scripts/SceneScripts/gameboard.gd" id="1_a1nq1"]
+[ext_resource type="Texture2D" uid="uid://dro3k41cru8n1" path="res://assets/Tilemap-0001.png" id="2_u8pjf"]
+[ext_resource type="PackedScene" uid="uid://dtxnray0pdnrx" path="res://prefabs/groundtiles.tscn" id="3_q4i6o"]
+[ext_resource type="PackedScene" uid="uid://bray018h4tcri" path="res://prefabs/SceneNodes/deco_tiles.tscn" id="4_a1nq1"]
+[ext_resource type="PackedScene" path="res://scenes/sprite_manager.tscn" id="5_sprm"]
+[ext_resource type="Script" path="res://scripts/SceneScripts/hud.gd" id="6_hud"]
+[ext_resource type="FontFile" uid="uid://bsoelnnsfg2tj" path="res://assets/PixelText.ttf" id="7_font"]
+
+[sub_resource type="Gradient" id="Gradient_a1nq1"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jkv85"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u8pjf"]
+noise = SubResource("FastNoiseLite_jkv85")
+color_ramp = SubResource("Gradient_a1nq1")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mryv8"]
+texture = ExtResource("2_u8pjf")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+9:4/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+9:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_25oqq"]
+sources/0 = SubResource("TileSetAtlasSource_mryv8")
+
+[node name="gameboard" type="Node2D" unique_id=869166633]
+script = ExtResource("1_a1nq1")
+noise_height_texture = SubResource("NoiseTexture2D_u8pjf")
+
+[node name="board" type="Node2D" parent="." unique_id=167062535]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="board" unique_id=1563483044]
+tile_set = SubResource("TileSet_25oqq")
+
+[node name="groundtiles" parent="board/TileMapLayer" unique_id=1239933665 instance=ExtResource("3_q4i6o")]
+
+[node name="decoTiles" parent="board/TileMapLayer" unique_id=863318643 instance=ExtResource("4_a1nq1")]
+
+[node name="SpriteManager" parent="board" unique_id=1772239221 instance=ExtResource("5_sprm")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=40498284]
+zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=82474050]
+
+[node name="HUD" type="Control" parent="Camera2D/CanvasLayer" unique_id=1676666065]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_hud")
+
+[node name="StatusBar" type="Panel" parent="Camera2D/CanvasLayer/HUD" unique_id=518498514]
+layout_mode = 0
+anchor_right = 1.0
+offset_bottom = 36.0
+
+[node name="StatusLabel" type="Label" parent="Camera2D/CanvasLayer/HUD/StatusBar" unique_id=742400453]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_fonts/font = ExtResource("7_font")
+theme_override_font_sizes/font_size = 16
+text = "Loading..."
+vertical_alignment = 1
+
+[node name="LogPanel" type="Panel" parent="Camera2D/CanvasLayer/HUD" unique_id=1973913557]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 0.35
+anchor_bottom = 1.0
+offset_top = -160.0
+offset_bottom = -36.0
+
+[node name="LogScroll" type="ScrollContainer" parent="Camera2D/CanvasLayer/HUD/LogPanel" unique_id=963362480]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="LogLabel" type="Label" parent="Camera2D/CanvasLayer/HUD/LogPanel/LogScroll" unique_id=1103412378]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("7_font")
+theme_override_font_sizes/font_size = 12
+
+[node name="ResultLabel" type="Label" parent="Camera2D/CanvasLayer/HUD" unique_id=1735635360]
+visible = false
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -60.0
+offset_right = 400.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("7_font")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,268 @@
+[gd_scene format=3 uid="uid://da5d3fvu7qsy4"]
+
+[ext_resource type="Script" uid="uid://juteb6kmxqk0" path="res://scripts/SceneScripts/game_options_menu.gd" id="1_5b3pr"]
+[ext_resource type="Texture2D" uid="uid://b1coypdcmskfm" path="res://assets/EasyButtonSprites/EasyButton-0001.png" id="2_3gxur"]
+[ext_resource type="Texture2D" uid="uid://b5o2kxl6lhoul" path="res://assets/EasyButtonSprites/EasyButtonPressed-0001.png" id="3_mohml"]
+[ext_resource type="Texture2D" uid="uid://dgt4s3tgh5ou4" path="res://assets/EasyButtonSprites/EasyButtonHover-0001.png" id="4_gfmsd"]
+[ext_resource type="Texture2D" uid="uid://dncl5xjj87a2g" path="res://assets/HardButtonSprites/HardButton-0001.png" id="5_5b3pr"]
+[ext_resource type="Texture2D" uid="uid://c58td4kuqjn68" path="res://assets/HardButtonSprites/HardButtonPressed-0001.png" id="6_3gxur"]
+[ext_resource type="Texture2D" uid="uid://cmsb0biy5w4yq" path="res://assets/HardButtonSprites/HardButtonHover-0001.png" id="7_mohml"]
+[ext_resource type="Texture2D" uid="uid://cyak66v5exfes" path="res://assets/BackButtonSprites/BackButtonIdle-0001.png" id="8_5b3pr"]
+[ext_resource type="Texture2D" uid="uid://b0via4wsa0sp4" path="res://assets/BackButtonSprites/BackButtonPressed-0001.png" id="9_3gxur"]
+[ext_resource type="Texture2D" uid="uid://cn582ms1kxi4v" path="res://assets/BackButtonSprites/BackButtonHover-0001.png" id="10_mohml"]
+[ext_resource type="FontFile" uid="uid://bsoelnnsfg2tj" path="res://assets/PixelText.ttf" id="11_3gxur"]
+[ext_resource type="Texture2D" uid="uid://dl3qb0jsw568l" path="res://assets/PlayButtonSprites/PlayButton-0001.png" id="12_1xjbx"]
+[ext_resource type="Texture2D" uid="uid://71y1mlpsj0rj" path="res://assets/PlayButtonSprites/PlayButtonPressed-0001.png" id="13_aq6e7"]
+[ext_resource type="Texture2D" uid="uid://cxpewks75g8o1" path="res://assets/PlayButtonSprites/PlayButtonHover-0001.png" id="14_5861t"]
+
+[node name="GameOptionsMenu" type="Node2D" unique_id=1208245338]
+script = ExtResource("1_5b3pr")
+
+[node name="Title" type="Label" parent="." unique_id=94480007]
+offset_left = 20.0
+offset_right = 1900.0
+offset_bottom = 170.0
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 200
+text = "Choose Your Map Settings"
+
+[node name="MenuRow1" type="HBoxContainer" parent="." unique_id=214408090]
+offset_left = 68.0
+offset_top = 204.0
+offset_right = 1844.0
+offset_bottom = 517.0
+theme_override_constants/separation = 650
+
+[node name="EasyHardButtons" type="HFlowContainer" parent="MenuRow1" unique_id=654447694]
+layout_mode = 2
+
+[node name="ChooseYourDifficulty" type="Label" parent="MenuRow1/EasyHardButtons" unique_id=604983218]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 50
+text = "Choose Your Difficulty:"
+
+[node name="ButtonPosition" type="HBoxContainer" parent="MenuRow1/EasyHardButtons" unique_id=1467185680]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="EasyButton" type="TextureButton" parent="MenuRow1/EasyHardButtons/ButtonPosition" unique_id=385850203]
+texture_filter = 3
+layout_mode = 2
+action_mode = 0
+keep_pressed_outside = true
+texture_normal = ExtResource("2_3gxur")
+texture_pressed = ExtResource("3_mohml")
+texture_hover = ExtResource("4_gfmsd")
+texture_disabled = ExtResource("3_mohml")
+stretch_mode = 0
+
+[node name="HardButton" type="TextureButton" parent="MenuRow1/EasyHardButtons/ButtonPosition" unique_id=1265995452]
+texture_filter = 3
+layout_mode = 2
+texture_normal = ExtResource("5_5b3pr")
+texture_pressed = ExtResource("6_3gxur")
+texture_hover = ExtResource("7_mohml")
+texture_disabled = ExtResource("6_3gxur")
+stretch_mode = 0
+
+[node name="SeedBoxPosition" type="VBoxContainer" parent="MenuRow1" unique_id=625878026]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SetYourSeed" type="Label" parent="MenuRow1/SeedBoxPosition" unique_id=939614712]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 50
+text = "Set Your Seed:"
+
+[node name="EnterSeedBox" type="LineEdit" parent="MenuRow1/SeedBoxPosition" unique_id=1176185566]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 37
+placeholder_text = "Enter Nums Only"
+max_length = 9
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="MenuRow2" type="HBoxContainer" parent="." unique_id=448166633]
+offset_left = 68.0
+offset_top = 517.0
+offset_right = 1844.0
+offset_bottom = 603.0
+
+[node name="MapSizeBox" type="VBoxContainer" parent="MenuRow2" unique_id=1139390218]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SetYourMapSize" type="Label" parent="MenuRow2/MapSizeBox" unique_id=1307239918]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 50
+text = "Set Your Map Size:"
+
+[node name="EnterX" type="LineEdit" parent="MenuRow2/MapSizeBox/SetYourMapSize" unique_id=1307570488]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 84.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 37
+placeholder_text = "X:"
+max_length = 4
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="EnterY" type="LineEdit" parent="MenuRow2/MapSizeBox/SetYourMapSize" unique_id=539376066]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 45.0
+offset_right = 184.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 37
+placeholder_text = "Y:"
+max_length = 4
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="CharCustomizer" type="VBoxContainer" parent="MenuRow2" unique_id=182676647]
+layout_mode = 2
+
+[node name="ChooseCharBrainVision" type="Label" parent="MenuRow2/CharCustomizer" unique_id=1897338365]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 50
+text = "Choose Your Character Brain and Vision:"
+
+[node name="BrainVisionRow" type="HBoxContainer" parent="." unique_id=300000001]
+offset_left = 68.0
+offset_top = 620.0
+offset_right = 1844.0
+offset_bottom = 870.0
+theme_override_constants/separation = 120
+
+[node name="BrainBox" type="VBoxContainer" parent="BrainVisionRow" unique_id=300000002]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BrainLabel" type="Label" parent="BrainVisionRow/BrainBox" unique_id=300000003]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 48
+text = "Brain:"
+
+[node name="BrainButtons" type="HBoxContainer" parent="BrainVisionRow/BrainBox" unique_id=300000004]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="SurvivalBrainButton" type="Button" parent="BrainVisionRow/BrainBox/BrainButtons" unique_id=300000005]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 36
+text = "Survival"
+tooltip_text = "Prioritizes water & food. Falls back to moving east."
+
+[node name="AggressiveBrainButton" type="Button" parent="BrainVisionRow/BrainBox/BrainButtons" unique_id=300000006]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 36
+text = "Aggressive"
+tooltip_text = "Charges east at all costs. Only grabs resources near death."
+
+[node name="MerchantBrainButton" type="Button" parent="BrainVisionRow/BrainBox/BrainButtons" unique_id=300000007]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 36
+text = "Merchant"
+tooltip_text = "Hunts gold and traders. Uses wealth to sustain the journey."
+
+[node name="BrainDesc" type="Label" parent="BrainVisionRow/BrainBox" unique_id=300000008]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 28
+text = "Survival: Prioritizes water & food. Falls back to moving east."
+autowrap_mode = 2
+
+[node name="VisionBox" type="VBoxContainer" parent="BrainVisionRow" unique_id=300000009]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VisionLabel" type="Label" parent="BrainVisionRow/VisionBox" unique_id=300000010]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 48
+text = "Vision:"
+
+[node name="VisionButtons" type="HBoxContainer" parent="BrainVisionRow/VisionBox" unique_id=300000011]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="TunnelVisionButton" type="Button" parent="BrainVisionRow/VisionBox/VisionButtons" unique_id=300000012]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 36
+text = "Tunnel"
+tooltip_text = "Sees E, NE, SE only. Fast but misses nearby resources."
+
+[node name="StandardVisionButton" type="Button" parent="BrainVisionRow/VisionBox/VisionButtons" unique_id=300000013]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 36
+text = "Standard"
+tooltip_text = "Sees N, S, E, W. Solid situational awareness."
+
+[node name="PanoramicVisionButton" type="Button" parent="BrainVisionRow/VisionBox/VisionButtons" unique_id=300000014]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 36
+text = "Panoramic"
+tooltip_text = "Sees all 8 directions. Best at finding food, water, and gold."
+
+[node name="VisionDesc" type="Label" parent="BrainVisionRow/VisionBox" unique_id=300000015]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_3gxur")
+theme_override_font_sizes/font_size = 28
+text = "Standard: Sees N, S, E, W. Solid situational awareness."
+autowrap_mode = 2
+
+[node name="MenuRow3" type="HBoxContainer" parent="." unique_id=2119486496]
+offset_left = 20.0
+offset_top = 900.0
+offset_right = 1900.0
+offset_bottom = 1060.0
+theme_override_constants/separation = 1224
+alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="MenuRow3" unique_id=1755464147]
+texture_filter = 3
+layout_mode = 2
+texture_normal = ExtResource("8_5b3pr")
+texture_pressed = ExtResource("9_3gxur")
+texture_hover = ExtResource("10_mohml")
+
+[node name="PlayButton" type="TextureButton" parent="MenuRow3" unique_id=130107405]
+texture_filter = 3
+layout_mode = 2
+texture_normal = ExtResource("12_1xjbx")
+texture_pressed = ExtResource("13_aq6e7")
+texture_hover = ExtResource("14_5861t")
+
+[connection signal="pressed" from="MenuRow1/EasyHardButtons/ButtonPosition/EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="MenuRow1/EasyHardButtons/ButtonPosition/HardButton" to="." method="_on_hard_button_pressed"]
+[connection signal="text_changed" from="MenuRow1/SeedBoxPosition/EnterSeedBox" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_changed" from="MenuRow1/SeedBoxPosition/EnterSeedBox" to="." method="_on_enter_seed_box_text_changed"]
+[connection signal="text_submitted" from="MenuRow1/SeedBoxPosition/EnterSeedBox" to="." method="_on_line_edit_text_submitted"]
+[connection signal="text_submitted" from="MenuRow1/SeedBoxPosition/EnterSeedBox" to="." method="_on_enter_seed_box_text_submitted"]
+[connection signal="text_changed" from="MenuRow2/MapSizeBox/SetYourMapSize/EnterX" to="." method="_on_enter_x_text_changed"]
+[connection signal="text_submitted" from="MenuRow2/MapSizeBox/SetYourMapSize/EnterX" to="." method="_on_enter_x_text_submitted"]
+[connection signal="text_changed" from="MenuRow2/MapSizeBox/SetYourMapSize/EnterY" to="." method="_on_enter_y_text_changed"]
+[connection signal="text_submitted" from="MenuRow2/MapSizeBox/SetYourMapSize/EnterY" to="." method="_on_enter_y_text_submitted"]
+[connection signal="pressed" from="BrainVisionRow/BrainBox/BrainButtons/SurvivalBrainButton" to="." method="_on_survival_brain_button_pressed"]
+[connection signal="pressed" from="BrainVisionRow/BrainBox/BrainButtons/AggressiveBrainButton" to="." method="_on_aggressive_brain_button_pressed"]
+[connection signal="pressed" from="BrainVisionRow/BrainBox/BrainButtons/MerchantBrainButton" to="." method="_on_merchant_brain_button_pressed"]
+[connection signal="pressed" from="BrainVisionRow/VisionBox/VisionButtons/TunnelVisionButton" to="." method="_on_tunnel_vision_button_pressed"]
+[connection signal="pressed" from="BrainVisionRow/VisionBox/VisionButtons/StandardVisionButton" to="." method="_on_standard_vision_button_pressed"]
+[connection signal="pressed" from="BrainVisionRow/VisionBox/VisionButtons/PanoramicVisionButton" to="." method="_on_panoramic_vision_button_pressed"]
+[connection signal="pressed" from="MenuRow3/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MenuRow3/PlayButton" to="." method="_on_play_button_pressed"]

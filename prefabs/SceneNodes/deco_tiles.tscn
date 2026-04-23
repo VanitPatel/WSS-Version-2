@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bray018h4tcri"]
+
+[ext_resource type="Texture2D" uid="uid://daeb3jjdo6xe7" path="res://assets/Decoaratoin-0001.png" id="1_j7to4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8gd2"]
+texture = ExtResource("1_j7to4")
+3:0/size_in_atlas = Vector2i(1, 2)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 8)
+3:0/0/terrain_set = 1
+3:0/0/terrain = 0
+3:0/0/probability = 0.5
+3:0/0/terrains_peering_bit/right_side = 0
+3:0/0/terrains_peering_bit/bottom_right_corner = 0
+3:0/0/terrains_peering_bit/bottom_side = 0
+3:0/0/terrains_peering_bit/bottom_left_corner = 0
+3:0/0/terrains_peering_bit/left_side = 0
+3:0/0/terrains_peering_bit/top_left_corner = 0
+3:0/0/terrains_peering_bit/top_side = 0
+3:0/0/terrains_peering_bit/top_right_corner = 0
+3:2/size_in_atlas = Vector2i(1, 2)
+3:2/0 = 0
+3:2/0/texture_origin = Vector2i(0, 8)
+3:2/0/terrain_set = 1
+3:2/0/terrain = 0
+3:2/0/probability = 0.5
+3:2/0/terrains_peering_bit/right_side = 0
+3:2/0/terrains_peering_bit/bottom_right_corner = 0
+3:2/0/terrains_peering_bit/bottom_side = 0
+3:2/0/terrains_peering_bit/bottom_left_corner = 0
+3:2/0/terrains_peering_bit/left_side = 0
+3:2/0/terrains_peering_bit/top_left_corner = 0
+3:2/0/terrains_peering_bit/top_side = 0
+3:2/0/terrains_peering_bit/top_right_corner = 0
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/next_alternative_id = 7
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/terrain_set = 0
+0:0/0/terrain = 1
+0:0/0/probability = 0.5
+1:0/size_in_atlas = Vector2i(1, 2)
+1:0/next_alternative_id = 8
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 8)
+1:0/0/terrain_set = 0
+1:0/0/terrain = 1
+1:0/0/probability = 0.5
+
+[sub_resource type="TileSet" id="TileSet_hstxw"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 1"
+terrain_set_0/terrain_0/color = Color(0.5, 0.4375, 0.25, 1)
+terrain_set_0/terrain_1/name = "cactus"
+terrain_set_0/terrain_1/color = Color(0, 1, 0.29803923, 1)
+terrain_set_1/mode = 0
+terrain_set_1/terrain_0/name = "tree"
+terrain_set_1/terrain_0/color = Color(0.5019608, 0.5764706, 0.2509804, 1)
+sources/0 = SubResource("TileSetAtlasSource_a8gd2")
+
+[node name="decoTiles" type="TileMapLayer" unique_id=135095719]
+tile_set = SubResource("TileSet_hstxw")

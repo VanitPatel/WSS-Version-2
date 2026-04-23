@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bbok2og00xj1u"]
+
+[ext_resource type="TileSet" uid="uid://q3aqftvu4kq0" path="res://prefabs/waterTileSet.tres" id="1_bdk6y"]
+
+[node name="water" type="TileMapLayer" unique_id=1641663137]
+tile_set = ExtResource("1_bdk6y")

@@ -1,0 +1,23 @@
+[gd_resource type="TileSet" format=3 uid="uid://b3a072x16smui"]
+
+[ext_resource type="Texture2D" uid="uid://dro3k41cru8n1" path="res://assets/Tilemap-0001.png" id="1_iyyfv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glnwb"]
+texture = ExtResource("1_iyyfv")
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/terrains_peering_bit/right_side = 0
+3:1/0/terrains_peering_bit/bottom_right_corner = 0
+3:1/0/terrains_peering_bit/bottom_side = 0
+3:1/0/terrains_peering_bit/bottom_left_corner = 0
+3:1/0/terrains_peering_bit/left_side = 0
+3:1/0/terrains_peering_bit/top_left_corner = 0
+3:1/0/terrains_peering_bit/top_side = 0
+3:1/0/terrains_peering_bit/top_right_corner = 0
+
+[resource]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "sand"
+terrain_set_0/terrain_0/color = Color(0.6715852, 0.63465935, 0.087951146, 1)
+sources/0 = SubResource("TileSetAtlasSource_glnwb")

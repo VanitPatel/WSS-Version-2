@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ctfjm2sw1aq2d"]
+
+[ext_resource type="TileSet" uid="uid://sjfl6sf1ppe6" path="res://prefabs/grassTileSet.tres" id="1_e1kak"]
+
+[node name="grass" type="TileMapLayer" unique_id=1720647060]
+use_parent_material = true
+tile_set = ExtResource("1_e1kak")

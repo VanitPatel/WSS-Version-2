@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ddam3kld2st4j"]
+
+[ext_resource type="TileSet" uid="uid://b3a072x16smui" path="res://prefabs/sandTileSet.tres" id="1_xjhim"]
+
+[node name="sand" type="TileMapLayer" unique_id=2126326198]
+tile_set = ExtResource("1_xjhim")

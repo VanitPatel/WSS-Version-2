@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dtxnray0pdnrx"]
+
+[ext_resource type="TileSet" uid="uid://citthkkrl3rce" path="res://prefabs/SceneNodes/grassTile.tres" id="1_qkc6l"]
+
+[node name="groundtiles" type="TileMapLayer" unique_id=1789439689]
+tile_set = ExtResource("1_qkc6l")
